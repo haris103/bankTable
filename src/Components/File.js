@@ -54,6 +54,17 @@ export default function File() {
     });
     setFilteredData(filter);
   };
+  const handleBranchName2 = (e) => {
+    setBranchName(e.target.value);
+    const filter = responsee.filter((item, index) => {
+      const itemData = item.bank_name
+        ? item.bank_name.toUpperCase()
+        : "".toUpperCase();
+      const textData = e.target.value.toUpperCase();
+      return itemData.indexOf(textData) > -1;
+    });
+    setFilteredData(filter);
+  };
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -61,7 +72,7 @@ export default function File() {
       const itemData = item.bank_name
         ? item.bank_name.toUpperCase()
         : "".toUpperCase();
-      const textData = search.toUpperCase();
+      const textData = e.target.value.toUpperCase();
       return itemData.indexOf(textData) > -1;
     });
     setFilteredData(filter);
@@ -90,6 +101,11 @@ export default function File() {
       reorder: true,
     },
     {
+      name: "Click and save your favourite banks",
+      button: true,
+      cell: (r) => <Iconbtn item={r} />,
+    },
+    {
       name: "Branch ID",
       // selector: "bank_id",
       selector: (row) => row["bank_id"],
@@ -102,11 +118,6 @@ export default function File() {
       selector: (row) => row["address"],
       sortable: true,
       reorder: true,
-    },
-    {
-      name: "Favourites",
-      button: true,
-      cell: (r) => <Iconbtn item={r} />,
     },
   ];
 
@@ -257,7 +268,13 @@ export default function File() {
   // const history = useHis
   return (
     <>
-      <Typography sx={{ borderBottom: 1 }}>Something Here</Typography>
+      <Typography
+        variant="h6"
+        sx={{ borderBottom: 1, display: "flex", justifyContent: "center" }}
+      >
+        React application with over 3000+ entries using React, Redux, Material
+        UI & React Data Table:)
+      </Typography>
       <Box sx={{ display: "flex", flexDirection: "row", flexGrow: 1 }}>
         <Grid sx={{ backgroundColor: "" }} md={3} item={true}>
           <Box sx={{ margin: 1, backgroundColor: "" }}>
@@ -270,8 +287,8 @@ export default function File() {
               <Link to="/">
                 <Button>All Banks</Button>
               </Link>
-              <Link to="/favourite">
-                <Button>Favourites</Button>
+              <Link to="/favourites">
+                <Button>Your saved and favourite banks</Button>
               </Link>
             </ButtonGroup>
           </Box>
@@ -323,7 +340,7 @@ export default function File() {
                     id="demo-simple-select"
                     // value={inputValue1}
                     label="Age"
-                    // onChange={handleChange1}
+                    onChange={handleBranchName2}
                   >
                     <MenuItem value="">
                       <em>None</em>
@@ -394,7 +411,7 @@ export default function File() {
               />
               {/* ALL FAVOURITE BANKS ROUTE */}
               <Route
-                path="/favourite"
+                path="/favourites"
                 element={
                   <Favouritebanks
                     title="All Favourite Banks List"
