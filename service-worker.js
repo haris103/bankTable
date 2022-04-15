@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bankTable/precache-manifest.12e9aed83ecf195a0511ead8a6d8ab1a.js"
+  "/bankTable/precache-manifest.bb2f0001be9a25e9c14fa7678bc8fae1.js"
 );
 
 workbox.clientsClaim();

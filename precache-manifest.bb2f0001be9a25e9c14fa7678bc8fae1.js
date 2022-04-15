@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a581d9aebd132cc47146",
+    "revision": "5c95f20ce94c8f5e240e",
     "url": "/bankTable/static/css/main.1d8d263a.chunk.css"
   },
   {
-    "revision": "a581d9aebd132cc47146",
-    "url": "/bankTable/static/js/main.a581d9ae.chunk.js"
+    "revision": "5c95f20ce94c8f5e240e",
+    "url": "/bankTable/static/js/main.5c95f20c.chunk.js"
   },
   {
     "revision": "aef5be1ab7919be08f37",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/bankTable/static/js/runtime~main.d7b350f5.js"
   },
   {
-    "revision": "969cdd918743cfbb41341e4b8f167167",
+    "revision": "774f3da143512cbc537dccedde1c3a99",
     "url": "/bankTable/index.html"
   }
 ];
